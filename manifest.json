@@ -1,0 +1,21 @@
+{
+  "name": "Santander Exporter",
+  "version": "1.0",
+  "description": "Build an Extenion!",
+  "manifest_version": 2,
+  "browser_action": {
+    "default_icon": "icon.png"
+  },
+  "permissions": [
+    "activeTab",
+    "tabs"
+  ],
+  "background" : {
+    "persistent": false,
+    "scripts" : ["background.js"]
+  },
+  "content_scripts" : [{
+            "matches" :  ["*://*/*"],
+            "js" : ["jquery.js", "FileSaver.js", "content.js"]
+  }]
+}
